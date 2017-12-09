@@ -99,7 +99,7 @@ public class PhoneDb extends SQLiteOpenHelper {
 
 
         cv.put(COL_TITLE, "Mcdonald");
-        cv.put(COL_NUMBER, "1175");
+        cv.put(COL_NUMBER, "1711");
         cv.put(COL_PICTURE, "mcdonald.PNG");
         db.insert(TABLE_NAME_FAST, null, cv);
 

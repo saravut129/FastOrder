@@ -3,11 +3,14 @@ package com.example.fastorderr;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.fastorderr.Model.FoodStoreItem;
@@ -47,8 +50,20 @@ public class FavouriteFoodStore extends AppCompatActivity {
                         "Favourite"
                 )
         );
+        mListView3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                FoodStoreItem item = aList3.get(position);
+                String phoneNumber = item.number;
+
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:" + phoneNumber));
+                startActivity(intent);
+
+            }
+        });
     }
-    @Override
+    /*@Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
@@ -58,7 +73,7 @@ public class FavouriteFoodStore extends AppCompatActivity {
                 mAdapter3.notifyDataSetChanged();
             }
         }
-    }
+    }*/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();

@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/FastOrderr.iml" filepath="$PROJECT_DIR$/FastOrderr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/FastOrderr.iml" filepath="$PROJECT_DIR$/.idea/FastOrderr.iml" />
+      <module fileurl="file://C:\Users\Admin\.AndroidStudio2.3\config\tasks\FastOrderr\FastOrderr.iml" filepath="C:\Users\Admin\.AndroidStudio2.3\config\tasks\FastOrderr\FastOrderr.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\Admin\.AndroidStudio2.3\config\tasks\FastOrderr\app\app.iml" filepath="C:\Users\Admin\.AndroidStudio2.3\config\tasks\FastOrderr\app\app.iml" />
     </modules>
   </component>
 </project>
