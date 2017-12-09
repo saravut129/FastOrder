@@ -51,10 +51,14 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 if(i == 0) {
                      intent = new Intent(MainActivity.this, FoodStoreListsActivity.class);
-                }else if (i==4){
-                     intent = new Intent(MainActivity.this,FavouriteFoodStore.class);
                 }else if (i==1){
                      intent = new Intent(MainActivity.this,TamSungActivity.class);
+                }else if (i==2){
+                    intent = new Intent(MainActivity.this,FastFoodActivity.class);
+                }else if (i==3){
+                    intent = new Intent(MainActivity.this,ChaBuActivity.class);
+                }else if (i==4){
+                    intent = new Intent(MainActivity.this,FavouriteFoodStore.class);
                 }
 
                 intent.putExtra("pos", i);

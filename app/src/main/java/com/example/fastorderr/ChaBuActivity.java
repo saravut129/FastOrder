@@ -12,36 +12,36 @@ import android.widget.ListView;
 
 import com.example.fastorderr.Model.FoodStoreItem;
 
-import com.example.fastorderr.adapter.FastFoodAdapter;
+import com.example.fastorderr.adapter.ChaBuAdapter;
 import com.example.fastorderr.db.PhoneDb;
 
 import java.util.ArrayList;
 import java.util.Locale;
 
-public class FastFoodActivity extends AppCompatActivity {
+public class ChaBuActivity extends AppCompatActivity {
 
-    private ListView mListView5;
+    private ListView mListView6;
     private PhoneDb mHelper;
     private SQLiteDatabase mDb;
     public static ArrayList<FoodStoreItem> aList2 = new ArrayList<>();
-    private FastFoodAdapter mAdapter5;
+    private ChaBuAdapter mAdapter6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fast_food);
+        setContentView(R.layout.activity_cha_bu);
         mHelper = new PhoneDb(this);
         mDb = mHelper.getReadableDatabase();
 
         loadDataFromDb();
 
-        mAdapter5 = new FastFoodAdapter(
+        mAdapter6 = new ChaBuAdapter(
                 this,
-                R.layout.item5,
+                R.layout.item6,
                 aList2
         );
-        mListView5 = (ListView) findViewById(R.id.listView5);
-        mListView5.setAdapter(mAdapter5);
+        mListView6 = (ListView) findViewById(R.id.listView6);
+        mListView6.setAdapter(mAdapter6);
 
 
 
@@ -49,10 +49,10 @@ public class FastFoodActivity extends AppCompatActivity {
                 String.format(
                         Locale.getDefault(),
                         "%s",
-                        "ร้านอาหารฟาสฟู๊ด"
+                        "ร้านชาบู/หมูกระทะ"
                 )
         );
-        mListView5.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        mListView6.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 FoodStoreItem item = aList2.get(position);
@@ -69,7 +69,7 @@ public class FastFoodActivity extends AppCompatActivity {
 
     private void loadDataFromDb() {
         Cursor cursor = mDb.query(
-                PhoneDb.TABLE_NAME_FAST,
+                PhoneDb.TABLE_NAME_CHA,
                 null,
                 null,
                 null,

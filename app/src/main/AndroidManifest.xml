@@ -24,7 +24,8 @@
         <activity android:name=".FavouriteFoodStore" />
         <activity android:name=".MainActivity" />
         <activity android:name=".TamSungActivity" />
-        <activity android:name=".FastFoodActivity"></activity>
+        <activity android:name=".FastFoodActivity" />
+        <activity android:name=".ChaBuActivity"></activity>
     </application>
 
 </manifest>

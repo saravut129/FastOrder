@@ -5,10 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.fastorderr.TamSungActivity">
+    tools:context="com.example.fastorderr.ChaBuActivity">
 
     <ListView
-        android:id="@+id/listView4"
+        android:id="@+id/listView6"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>
