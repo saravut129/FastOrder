@@ -90,6 +90,12 @@ public class PhoneDb extends SQLiteOpenHelper {
         cv.put(COL_NUMBER, "0874946288");
         cv.put(COL_PICTURE, "nongpuch.PNG");
         db.insert(TABLE_NAME_TAM, null, cv);
+
+        cv = new ContentValues();
+        cv.put(COL_TITLE, "KFC");
+        cv.put(COL_NUMBER, "1150");
+        cv.put(COL_PICTURE, "kfc.PNG");
+        db.insert(TABLE_NAME_FAST, null, cv);
     }
 
 
