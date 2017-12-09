@@ -10,7 +10,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ListView;
 
-import com.example.fastorderr.Model.FoodStoreItem2;
+import com.example.fastorderr.Model.FoodStoreItem;
 import com.example.fastorderr.adapter.FavoriteFoodStoreListAdapter;
 import com.example.fastorderr.db.PhoneDb;
 
@@ -21,7 +21,7 @@ public class FavouriteFoodStore extends AppCompatActivity {
     private ListView mListView3;
     private PhoneDb mHelper;
     private SQLiteDatabase mDb;
-    public static ArrayList<FoodStoreItem2> aList3 = new ArrayList<>();
+    public static ArrayList<FoodStoreItem> aList3 = new ArrayList<>();
     private FavoriteFoodStoreListAdapter mAdapter3;
 
     @Override
@@ -105,7 +105,7 @@ public class FavouriteFoodStore extends AppCompatActivity {
             String number = cursor.getString(cursor.getColumnIndex(PhoneDb.COL_NUMBER));
             String picture = cursor.getString(cursor.getColumnIndex(PhoneDb.COL_PICTURE));
 
-            FoodStoreItem2 item = new FoodStoreItem2(id, title, number, picture);
+            FoodStoreItem item = new FoodStoreItem(id, title, number, picture);
             aList3.add(item);
         }
     }

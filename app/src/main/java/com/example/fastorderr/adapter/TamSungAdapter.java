@@ -27,32 +27,32 @@ import java.util.Locale;
 
 public class TamSungAdapter extends ArrayAdapter<FoodStoreItem> {
 
-    private Context mContext2;
-    private int mLayoutResId2;
-    private ArrayList<FoodStoreItem> mFoodStoreList2;
+    private Context mContext3;
+    private int mLayoutResId3;
+    private ArrayList<FoodStoreItem> mFoodStoreList3;
 
     public TamSungAdapter(Context context, int resource, ArrayList<FoodStoreItem> objects){
         super(context, resource, objects);
 
-        this.mContext2 = context;
-        this.mLayoutResId2 = resource;
-        this.mFoodStoreList2 = objects;
+        this.mContext3 = context;
+        this.mLayoutResId3 = resource;
+        this.mFoodStoreList3 = objects;
     }
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        LayoutInflater inflater = LayoutInflater.from(mContext2);
+        LayoutInflater inflater = LayoutInflater.from(mContext3);
 
         View v = convertView;
         if(v == null){
-            v = inflater.inflate(mLayoutResId2, null);
+            v = inflater.inflate(mLayoutResId3, null);
         }
 
-        ImageView iv1 = v.findViewById(R.id.imageView);
-        TextView tv1 = v.findViewById(R.id.textView2);
-        TextView tv2 = v.findViewById(R.id.textView3);
+        ImageView iv1 = v.findViewById(R.id.imageView2);
+        TextView tv1 = v.findViewById(R.id.textView6);
+        TextView tv2 = v.findViewById(R.id.textView7);
 
-        FoodStoreItem foodStoreItem = mFoodStoreList2.get(position);
+        FoodStoreItem foodStoreItem = mFoodStoreList3.get(position);
 
 
         tv1.setText(
@@ -72,7 +72,7 @@ public class TamSungAdapter extends ArrayAdapter<FoodStoreItem> {
 
         String pictureFileName = foodStoreItem.picture;
 
-        AssetManager am = mContext2.getAssets();
+        AssetManager am = mContext3.getAssets();
         try {
             InputStream stream = am.open(pictureFileName);
             Drawable drawable = Drawable.createFromStream(stream, null);
@@ -81,7 +81,7 @@ public class TamSungAdapter extends ArrayAdapter<FoodStoreItem> {
         } catch (IOException e) {
             e.printStackTrace();
 
-            File pictureFile = new File(mContext2.getFilesDir(), pictureFileName);
+            File pictureFile = new File(mContext3.getFilesDir(), pictureFileName);
             Drawable drawable = Drawable.createFromPath(pictureFile.getAbsolutePath());
             iv1.setImageDrawable(drawable);
         }

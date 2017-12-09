@@ -12,7 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.fastorderr.Model.FoodStoreItem2;
+import com.example.fastorderr.Model.FoodStoreItem;
 import com.example.fastorderr.R;
 
 import java.io.File;
@@ -25,13 +25,13 @@ import java.util.Locale;
  * Created by Friday on 12/9/2017.
  */
 
-public class FavoriteFoodStoreListAdapter extends ArrayAdapter<FoodStoreItem2> {
+public class FavoriteFoodStoreListAdapter extends ArrayAdapter<FoodStoreItem> {
 
     private Context mContext3;
     private int mLayoutResId3;
-    private ArrayList<FoodStoreItem2> mFoodStoreList3;
+    private ArrayList<FoodStoreItem> mFoodStoreList3;
 
-    public FavoriteFoodStoreListAdapter(Context context, int resource, ArrayList<FoodStoreItem2> objects){
+    public FavoriteFoodStoreListAdapter(Context context, int resource, ArrayList<FoodStoreItem> objects){
         super(context, resource, objects);
 
         this.mContext3 = context;
@@ -52,7 +52,7 @@ public class FavoriteFoodStoreListAdapter extends ArrayAdapter<FoodStoreItem2> {
         TextView tv1 = v.findViewById(R.id.textView4);
         TextView tv2 = v.findViewById(R.id.textView5);
 
-        FoodStoreItem2 foodStoreItem = mFoodStoreList3.get(position);
+        FoodStoreItem foodStoreItem = mFoodStoreList3.get(position);
 
 
         tv1.setText(

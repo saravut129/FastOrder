@@ -73,29 +73,46 @@ public class PhoneDb extends SQLiteOpenHelper {
         cv.put(COL_PICTURE, "pajar.PNG");
         db.insert(TABLE_NAME_REC, null, cv);
 
-        cv = new ContentValues();
+
         cv.put(COL_TITLE, "ล้านกระติ๊บ");
         cv.put(COL_NUMBER, "0841295547");
         cv.put(COL_PICTURE, "lankratib.PNG");
         db.insert(TABLE_NAME_REC, null, cv);
 
-        cv = new ContentValues();
+
         cv.put(COL_TITLE, "ร้านป้าอร");
         cv.put(COL_NUMBER, "0811491565");
         cv.put(COL_PICTURE, "paorn.PNG");
         db.insert(TABLE_NAME_TAM, null, cv);
 
-        cv = new ContentValues();
+
         cv.put(COL_TITLE, "ร้านน้องพั้น");
         cv.put(COL_NUMBER, "0874946288");
         cv.put(COL_PICTURE, "nongpuch.PNG");
         db.insert(TABLE_NAME_TAM, null, cv);
 
-        cv = new ContentValues();
+
         cv.put(COL_TITLE, "KFC");
         cv.put(COL_NUMBER, "1150");
         cv.put(COL_PICTURE, "kfc.PNG");
         db.insert(TABLE_NAME_FAST, null, cv);
+
+
+        cv.put(COL_TITLE, "Mcdonald");
+        cv.put(COL_NUMBER, "1175");
+        cv.put(COL_PICTURE, "mcdonald.PNG");
+        db.insert(TABLE_NAME_FAST, null, cv);
+
+
+        cv.put(COL_TITLE, "ชาบูอินดี้");
+        cv.put(COL_NUMBER, "0901970639");
+        cv.put(COL_PICTURE, "chabuindy.PNG");
+        db.insert(TABLE_NAME_CHA, null, cv);
+
+        cv.put(COL_TITLE, "ไดซาชิ ชาบู");
+        cv.put(COL_NUMBER, "0923390847");
+        cv.put(COL_PICTURE, "daisachi.PNG");
+        db.insert(TABLE_NAME_CHA, null, cv);
     }
 
 

@@ -27,32 +27,32 @@ import java.util.Locale;
 
 public class ChaBuAdapter extends ArrayAdapter<FoodStoreItem> {
 
-    private Context mContext2;
-    private int mLayoutResId2;
-    private ArrayList<FoodStoreItem> mFoodStoreList2;
+    private Context mContext5;
+    private int mLayoutResId5;
+    private ArrayList<FoodStoreItem> mFoodStoreList5;
 
     public ChaBuAdapter(Context context, int resource, ArrayList<FoodStoreItem> objects){
         super(context, resource, objects);
 
-        this.mContext2 = context;
-        this.mLayoutResId2 = resource;
-        this.mFoodStoreList2 = objects;
+        this.mContext5 = context;
+        this.mLayoutResId5 = resource;
+        this.mFoodStoreList5 = objects;
     }
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        LayoutInflater inflater = LayoutInflater.from(mContext2);
+        LayoutInflater inflater = LayoutInflater.from(mContext5);
 
         View v = convertView;
         if(v == null){
-            v = inflater.inflate(mLayoutResId2, null);
+            v = inflater.inflate(mLayoutResId5, null);
         }
 
-        ImageView iv1 = v.findViewById(R.id.imageView);
-        TextView tv1 = v.findViewById(R.id.textView2);
-        TextView tv2 = v.findViewById(R.id.textView3);
+        ImageView iv1 = v.findViewById(R.id.imageView4);
+        TextView tv1 = v.findViewById(R.id.textView10);
+        TextView tv2 = v.findViewById(R.id.textView11);
 
-        FoodStoreItem foodStoreItem = mFoodStoreList2.get(position);
+        FoodStoreItem foodStoreItem = mFoodStoreList5.get(position);
 
 
         tv1.setText(
@@ -72,7 +72,7 @@ public class ChaBuAdapter extends ArrayAdapter<FoodStoreItem> {
 
         String pictureFileName = foodStoreItem.picture;
 
-        AssetManager am = mContext2.getAssets();
+        AssetManager am = mContext5.getAssets();
         try {
             InputStream stream = am.open(pictureFileName);
             Drawable drawable = Drawable.createFromStream(stream, null);
@@ -81,7 +81,7 @@ public class ChaBuAdapter extends ArrayAdapter<FoodStoreItem> {
         } catch (IOException e) {
             e.printStackTrace();
 
-            File pictureFile = new File(mContext2.getFilesDir(), pictureFileName);
+            File pictureFile = new File(mContext5.getFilesDir(), pictureFileName);
             Drawable drawable = Drawable.createFromPath(pictureFile.getAbsolutePath());
             iv1.setImageDrawable(drawable);
         }

@@ -27,32 +27,32 @@ import java.util.Locale;
 
 public class FastFoodAdapter extends ArrayAdapter<FoodStoreItem> {
 
-    private Context mContext2;
-    private int mLayoutResId2;
-    private ArrayList<FoodStoreItem> mFoodStoreList2;
+    private Context mContext4;
+    private int mLayoutResId4;
+    private ArrayList<FoodStoreItem> mFoodStoreList4;
 
     public FastFoodAdapter(Context context, int resource, ArrayList<FoodStoreItem> objects){
         super(context, resource, objects);
 
-        this.mContext2 = context;
-        this.mLayoutResId2 = resource;
-        this.mFoodStoreList2 = objects;
+        this.mContext4 = context;
+        this.mLayoutResId4 = resource;
+        this.mFoodStoreList4 = objects;
     }
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        LayoutInflater inflater = LayoutInflater.from(mContext2);
+        LayoutInflater inflater = LayoutInflater.from(mContext4);
 
         View v = convertView;
         if(v == null){
-            v = inflater.inflate(mLayoutResId2, null);
+            v = inflater.inflate(mLayoutResId4, null);
         }
 
-        ImageView iv1 = v.findViewById(R.id.imageView);
-        TextView tv1 = v.findViewById(R.id.textView2);
-        TextView tv2 = v.findViewById(R.id.textView3);
+        ImageView iv1 = v.findViewById(R.id.imageView3);
+        TextView tv1 = v.findViewById(R.id.textView8);
+        TextView tv2 = v.findViewById(R.id.textView9);
 
-        FoodStoreItem foodStoreItem = mFoodStoreList2.get(position);
+        FoodStoreItem foodStoreItem = mFoodStoreList4.get(position);
 
 
         tv1.setText(
@@ -72,7 +72,7 @@ public class FastFoodAdapter extends ArrayAdapter<FoodStoreItem> {
 
         String pictureFileName = foodStoreItem.picture;
 
-        AssetManager am = mContext2.getAssets();
+        AssetManager am = mContext4.getAssets();
         try {
             InputStream stream = am.open(pictureFileName);
             Drawable drawable = Drawable.createFromStream(stream, null);
@@ -81,7 +81,7 @@ public class FastFoodAdapter extends ArrayAdapter<FoodStoreItem> {
         } catch (IOException e) {
             e.printStackTrace();
 
-            File pictureFile = new File(mContext2.getFilesDir(), pictureFileName);
+            File pictureFile = new File(mContext4.getFilesDir(), pictureFileName);
             Drawable drawable = Drawable.createFromPath(pictureFile.getAbsolutePath());
             iv1.setImageDrawable(drawable);
         }
