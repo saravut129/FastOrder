@@ -23,7 +23,8 @@
         <activity android:name=".AddFoodStoreActivity" />
         <activity android:name=".FavouriteFoodStore" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".TamSungActivity"></activity>
+        <activity android:name=".TamSungActivity" />
+        <activity android:name=".FastFoodActivity"></activity>
     </application>
 
 </manifest>
