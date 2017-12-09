@@ -28,8 +28,11 @@ public class MainActivity extends AppCompatActivity {
         mListView = (ListView) findViewById(R.id.listView);
 
         if (savedInstanceState == null) {
-            mCategory.add(new CategoryItem("General"));
-            mCategory.add(new CategoryItem("Favorite"));
+            mCategory.add(new CategoryItem("ร้านอาหารแนะนำ"));
+            mCategory.add(new CategoryItem("ร้านอาหารตามสั่ง"));
+            mCategory.add(new CategoryItem("ร้านอาหารฟาสฟู๊ด"));
+            mCategory.add(new CategoryItem("ร้านชาบู/หมูกระทะ"));
+            mCategory.add(new CategoryItem("ร้านโปรดของฉัน"));
         }
 
         mAdapter = new CategoryListAdapter(
@@ -45,12 +48,15 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 CategoryItem ci = mCategory.get(i);
                 Toast.makeText(MainActivity.this, ci.name, Toast.LENGTH_SHORT).show();
-                Intent intent;
+                Intent intent = new Intent();
                 if(i == 0) {
                      intent = new Intent(MainActivity.this, FoodStoreListsActivity.class);
-                }else{
+                }else if (i==4){
                      intent = new Intent(MainActivity.this,FavouriteFoodStore.class);
+                }else if (i==1){
+                     intent = new Intent(MainActivity.this,TamSungActivity.class);
                 }
+
                 intent.putExtra("pos", i);
                 startActivity(intent);
             }

@@ -16,6 +16,9 @@ public class PhoneDb extends SQLiteOpenHelper {
 
     public static final String TABLE_NAME_REC = "phone_number1";
     public static final String TABLE_NAME_FAV = "phone_number2";
+    public static final String TABLE_NAME_TAM= "phone_number3";
+    public static final String TABLE_NAME_FAST = "phone_number4";
+    public static final String TABLE_NAME_CHABU = "phone_number5";
 
     public static final String COL_ID = "_id";
     public static final String COL_TITLE = "title";
@@ -32,6 +35,22 @@ public class PhoneDb extends SQLiteOpenHelper {
             + COL_TITLE + " TEXT, "
             + COL_NUMBER + " TEXT, "
             + COL_PICTURE + " TEXT)";
+    private static final String CREATE_TABLE_TAM = "CREATE TABLE "+ TABLE_NAME_TAM + "("
+            + COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + COL_TITLE + " TEXT, "
+            + COL_NUMBER + " TEXT, "
+            + COL_PICTURE + " TEXT)";
+    private static final String CREATE_TABLE_FAST = "CREATE TABLE "+ TABLE_NAME_FAST + "("
+            + COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + COL_TITLE + " TEXT, "
+            + COL_NUMBER + " TEXT, "
+            + COL_PICTURE + " TEXT)";
+    private static final String CREATE_TABLE_CHABU = "CREATE TABLE "+ TABLE_NAME_CHABU + "("
+            + COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + COL_TITLE + " TEXT, "
+            + COL_NUMBER + " TEXT, "
+            + COL_PICTURE + " TEXT)";
+
 
     public PhoneDb(Context context){
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -41,6 +60,9 @@ public class PhoneDb extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE_FAV );
         db.execSQL(CREATE_TABLE_REC);
+        db.execSQL(CREATE_TABLE_TAM);
+        db.execSQL(CREATE_TABLE_FAST);
+        db.execSQL(CREATE_TABLE_CHABU);
         insertInitialData(db);
     }
 
@@ -64,6 +86,9 @@ public class PhoneDb extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_REC);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_FAV);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_TAM);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_FAST);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_CHABU);
         onCreate(db);
     }
 }
