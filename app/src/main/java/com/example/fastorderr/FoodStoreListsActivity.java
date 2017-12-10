@@ -40,7 +40,7 @@ public class FoodStoreListsActivity extends AppCompatActivity {
                 aList2
         );
         mListView2 = (ListView) findViewById(R.id.listView2);
-        mListView2.setAdapter(mAdapter2);
+        mListView2.setAdapter(mAdapter2); //123456
 
 
 
